@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MailReceiver", "731-MailSlot\731-MailSlot.vcxproj", "{7814322B-E00A-4589-8817-C04D67514ADA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MailSender", "MailSender\MailSender.vcxproj", "{4D24BC00-6AC7-455D-81FB-39DE87F1040F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7814322B-E00A-4589-8817-C04D67514ADA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7814322B-E00A-4589-8817-C04D67514ADA}.Debug|Win32.Build.0 = Debug|Win32
+		{7814322B-E00A-4589-8817-C04D67514ADA}.Release|Win32.ActiveCfg = Release|Win32
+		{7814322B-E00A-4589-8817-C04D67514ADA}.Release|Win32.Build.0 = Release|Win32
+		{4D24BC00-6AC7-455D-81FB-39DE87F1040F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D24BC00-6AC7-455D-81FB-39DE87F1040F}.Debug|Win32.Build.0 = Debug|Win32
+		{4D24BC00-6AC7-455D-81FB-39DE87F1040F}.Release|Win32.ActiveCfg = Release|Win32
+		{4D24BC00-6AC7-455D-81FB-39DE87F1040F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

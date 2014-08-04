@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "729-KerObj", "729-KerObj\729-KerObj.vcxproj", "{DDA2DCF9-574A-4458-8439-F0712E01310F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcessSnapshot", "ProcessSnapshot\ProcessSnapshot.vcxproj", "{ACF3B553-B162-4D27-80E0-53369DEEE5FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDA2DCF9-574A-4458-8439-F0712E01310F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DDA2DCF9-574A-4458-8439-F0712E01310F}.Debug|Win32.Build.0 = Debug|Win32
+		{DDA2DCF9-574A-4458-8439-F0712E01310F}.Release|Win32.ActiveCfg = Release|Win32
+		{DDA2DCF9-574A-4458-8439-F0712E01310F}.Release|Win32.Build.0 = Release|Win32
+		{ACF3B553-B162-4D27-80E0-53369DEEE5FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ACF3B553-B162-4D27-80E0-53369DEEE5FB}.Debug|Win32.Build.0 = Debug|Win32
+		{ACF3B553-B162-4D27-80E0-53369DEEE5FB}.Release|Win32.ActiveCfg = Release|Win32
+		{ACF3B553-B162-4D27-80E0-53369DEEE5FB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
