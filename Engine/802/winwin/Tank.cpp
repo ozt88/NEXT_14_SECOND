@@ -1,11 +1,17 @@
 #include "Tank.h"
-
+#include "Bullet.h"
 
 Tank::Tank()
 {
-	m_Body = MAKEINTRESOURCE( IDB_BITMAP1 );
-	m_Position.posX = 100;
-	m_Position.posY = 100;
+	m_Hp = 50;
+	m_PosX = 100;
+	m_PosY = 100;
+	m_Width = BOX_SIZE;
+	m_Length = BOX_SIZE;
+	m_VelocityX = 50;
+	m_VelocityY = 50;
+	m_Body = IDB_BITMAP1;
+	m_Type = TYPE_TANK;
 }
 
 
@@ -13,39 +19,38 @@ Tank::~Tank()
 {
 }
 
-
-void Tank::Render(HWND& hWnd, HINSTANCE& hinst,
-				   HDC& hdc, HDC& MemDC, PAINTSTRUCT& ps)
+void Tank::Update()
 {
-	HBITMAP myBitmap , OldBitmap;
-	myBitmap = LoadBitmap( hinst , m_Body);
-	OldBitmap = ( HBITMAP )SelectObject( MemDC , myBitmap );
-	BitBlt( hdc , 0 + m_Position.posX , 0 + m_Position.posY , 
-			123 + m_Position.posX , 160 + m_Position.posY ,
-			MemDC , 0 , 0 , SRCCOPY );
-	SelectObject( MemDC , OldBitmap );
-	DeleteObject( myBitmap );
-	DeleteDC( MemDC );
-	EndPaint( hWnd , &ps );
 }
 
-void Tank::Move( Direction dir )
+Bullet* Tank::Attack( double angle )
 {
-	switch (dir)
+	Bullet* newBullet = new Bullet( (m_PosX + GetEndPosX())/2 , m_PosY , angle );
+	return newBullet;
+}
+
+void Tank::Move( int dir )
+{
+	switch( dir )
 	{
-		case UP:
-			m_Position.posY -= BOX_SIZE;
+		case 0:
+			if( m_PosX > 0 ) m_PosX -= m_VelocityX;
 			break;
-		case DOWN:
-			m_Position.posY += BOX_SIZE;
+		case 1:
+			if( GetEndPosX() < 900 ) m_PosX += m_VelocityX;
 			break;
-		case LEFT:
-			m_Position.posX -= BOX_SIZE;
+		case 2:
+			if( m_PosY > 0 ) m_PosY -= m_VelocityY;
 			break;
-		case RIGHT:
-			m_Position.posX += BOX_SIZE;
+		case 3: 
+			if( GetEndPosY() < 450 ) m_PosY += m_VelocityY;
 			break;
 		default:
 			break;
 	}
+}
+
+bool Tank::IsDestroy()
+{
+	return m_Hp <= 0;
 }

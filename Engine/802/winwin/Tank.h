@@ -1,43 +1,38 @@
 #pragma once
 #include "stdafx.h"
+#include "GameObject.h"
 
-#define BOX_SIZE 30
+#define MAX_HP 50
+#define INIT_POSX 100
+#define INIT_POSY 100
 
-enum Direction
-{
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT,
-};
 
-struct Pos
-{
-	int posX;
-	int posY;
-};
+class Bullet;
 
-class Tank
+class Tank :public GameObject
 {
 public:
 	Tank();
 	~Tank();
 	
-	int getPosX()
+	void Move(int Dir);
+	void Update();
+	Bullet* Attack( double angle );
+	void Input( WPARAM wParam );
+	int GetEndPosX()
 	{
-		return m_Position.posX;
+		return m_PosX + BOX_SIZE;
 	}
-	
-	int getPosY()
+	int GetEndPosY()
 	{
-		return m_Position.posY;
+		return m_PosY + BOX_SIZE;
 	}
+	bool IsDestroy();
 
-	//void Render( HWND& hWnd , HINSTANCE& g_hinst , HDC& hdc , HDC& MemDC , PAINTSTRUCT& ps , RECT& rt );
-	void Render( HWND& hWnd , HINSTANCE& hinst, HDC& hdc , HDC& MemDC , PAINTSTRUCT& ps );
-	void Move( Direction dir );
 private:
-	Pos m_Position;
-	LPWSTR m_Body; 
+
+	int m_VelocityX;
+	int m_VelocityY;
+
 };
 
