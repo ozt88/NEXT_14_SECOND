@@ -83,7 +83,7 @@ LRESULT CALLBACK WndProc( HWND hWnd , UINT iMessage , WPARAM wParam , LPARAM lPa
 
 			if( randomValue > 100 ){--randomValue;}
 
-			for( auto object = gameObjs.begin(); object != gameObjs.end(); ++object )
+			for( auto& object = gameObjs.begin(); object != gameObjs.end(); ++object )
 			{
 				(*object)->Update();
 				if( ( *object )->IsDestroy() )
@@ -92,11 +92,11 @@ LRESULT CALLBACK WndProc( HWND hWnd , UINT iMessage , WPARAM wParam , LPARAM lPa
 				}
 			}
 
-			for( auto deletes : deleteObjs )
+			for( auto& deletes : deleteObjs )
 			{
 				gameObjs.remove( deletes );
+				delete deletes;
 			}
-
 			deleteObjs.clear();
 			InvalidateRect( hWnd , &rt , true );
 			return 0;
