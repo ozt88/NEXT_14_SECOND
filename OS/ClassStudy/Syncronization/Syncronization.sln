@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Syncronization", "Syncronization\Syncronization.vcxproj", "{8D360672-C918-437F-B97C-49CF5806A164}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CriticalSection", "Syncronization\Syncronization.vcxproj", "{8D360672-C918-437F-B97C-49CF5806A164}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyungDongGyoja", "MyungDongGyoja\MyungDongGyoja.vcxproj", "{F2313B9D-EC0F-435E-A01A-026561E8F3AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8D360672-C918-437F-B97C-49CF5806A164}.Debug|Win32.Build.0 = Debug|Win32
 		{8D360672-C918-437F-B97C-49CF5806A164}.Release|Win32.ActiveCfg = Release|Win32
 		{8D360672-C918-437F-B97C-49CF5806A164}.Release|Win32.Build.0 = Release|Win32
+		{F2313B9D-EC0F-435E-A01A-026561E8F3AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F2313B9D-EC0F-435E-A01A-026561E8F3AE}.Debug|Win32.Build.0 = Debug|Win32
+		{F2313B9D-EC0F-435E-A01A-026561E8F3AE}.Release|Win32.ActiveCfg = Release|Win32
+		{F2313B9D-EC0F-435E-A01A-026561E8F3AE}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
