@@ -127,9 +127,9 @@ void GameManager::Attack( CPlayer* from , CPlayer* to )
 	Sleep(100);
 
 	LeaveCriticalSection( to->GetLock() );
-	_tprintf_s( _T( "--%d exit critical section\n" ) , from->GetId() );
+	_tprintf_s( _T( "--%d leave critical section\n" ) , from->GetId() );
 	LeaveCriticalSection( from->GetLock());
-	_tprintf_s( _T( "--%d exit critical section\n" ) , from->GetId() );
+	_tprintf_s( _T( "--%d leave critical section\n" ) , from->GetId() );
 
 }
 
