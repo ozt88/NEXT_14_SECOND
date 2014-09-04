@@ -17,6 +17,7 @@ BOOL ShowPath( LPCWSTR fileName );
 BOOL TestSetPointer( LPCWSTR fileName );
 BOOL TestDirectory();
 BOOL ShowDir();
+void ShowFile( WIN32_FIND_DATA findFileData );
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -356,6 +357,7 @@ BOOL ShowDir()
 	GetCurrentDirectory( MAX_PATH , dirPath);
 	WIN32_FIND_DATA FindFileData;
 	HANDLE hFind = INVALID_HANDLE_VALUE;
+	SYSTEMTIME stUTC , stLocal;
 
 	_tcsncat_s( dirPath , _T( "\\*" ) , 3 );
 	hFind = FindFirstFile( dirPath , &FindFileData );
@@ -366,12 +368,28 @@ BOOL ShowDir()
 	}
 	else
 	{
-		_tprintf_s( _T( "%s\n" ) , FindFileData.cFileName );
+		_tprintf_s( _T( "%s \n\n" ), dirPath );
+		ShowFile( FindFileData );
 		while( FindNextFile( hFind , &FindFileData ) )
 		{
-			_tprintf_s( _T( "%s\n" ) , FindFileData.cFileName );
+			ShowFile( FindFileData );
 		}
 	}
 	FindClose( hFind );
 	return TRUE;
+}
+
+void ShowFile(WIN32_FIND_DATA findFileData)
+{
+	TCHAR fileTimeInfo[STRING_LEN] = { 0 , };
+	SYSTEMTIME stUTC , stLocal;
+	FileTimeToSystemTime( &findFileData.ftLastWriteTime, &stUTC );
+	SystemTimeToTzSpecificLocalTime( NULL , &stUTC , &stLocal );
+
+	_stprintf_s( fileTimeInfo , _T( "%02d/%02d/%d\t%02d:%02d" ) ,
+				 stLocal.wMonth , stLocal.wDay ,
+				 stLocal.wYear , stLocal.wHour ,
+				 stLocal.wMinute );
+	_tprintf_s( _T( "%s\t%5u KB\t%s\n" ) ,fileTimeInfo , findFileData.nFileSizeLow/1000, findFileData.cFileName );
+
 }
