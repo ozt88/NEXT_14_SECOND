@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Heap", "Heap\Heap.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MMF", "MMF\MMF.vcxproj", "{4871B478-9DE0-4CE2-912E-10F1C642A6A6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VertualAlloc", "VertualAlloc\VertualAlloc.vcxproj", "{49B947C2-6D85-4403-9F31-A478596A11EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{4871B478-9DE0-4CE2-912E-10F1C642A6A6}.Debug|Win32.Build.0 = Debug|Win32
 		{4871B478-9DE0-4CE2-912E-10F1C642A6A6}.Release|Win32.ActiveCfg = Release|Win32
 		{4871B478-9DE0-4CE2-912E-10F1C642A6A6}.Release|Win32.Build.0 = Release|Win32
+		{49B947C2-6D85-4403-9F31-A478596A11EF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{49B947C2-6D85-4403-9F31-A478596A11EF}.Debug|Win32.Build.0 = Debug|Win32
+		{49B947C2-6D85-4403-9F31-A478596A11EF}.Release|Win32.ActiveCfg = Release|Win32
+		{49B947C2-6D85-4403-9F31-A478596A11EF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
